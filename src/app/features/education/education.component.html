@@ -1,0 +1,39 @@
+<section class="education-section">
+  <div class="education-container">
+    <app-section-title 
+      subtitle="Academic Background" 
+      title="Education" 
+      description="My educational journey and the institutions that shaped my career.">
+    </app-section-title>
+
+    <div class="education-grid">
+      @for (edu of education; track edu.id; let i = $index) {
+        <div class="education-card" [style.animation-delay]="i * 150 + 'ms'">
+          <div class="edu-header">
+            <div class="institution-logo">
+              <i class="pi pi-book"></i>
+            </div>
+            <div class="institution-info">
+              <h3 class="institution-name">{{ edu.institution }}</h3>
+              <span class="degree">{{ edu.degree }} in {{ edu.field }}</span>
+            </div>
+          </div>
+
+          <div class="edu-duration">
+            <i class="pi pi-calendar"></i>
+            <span>{{ edu.duration }}</span>
+          </div>
+
+          <div class="edu-achievements">
+            <h4 class="achievements-title">Achievements</h4>
+            <ul class="achievements-list">
+              @for (achievement of edu.achievements; track achievement) {
+                <li>{{ achievement }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

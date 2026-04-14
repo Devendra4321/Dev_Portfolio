@@ -1,0 +1,57 @@
+<section class="experience-section">
+  <div class="experience-container">
+    <app-section-title subtitle="Career Journey" title="Work Experience"
+      description="A timeline of my professional journey and the roles I've held.">
+    </app-section-title>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.id; let i = $index) {
+      <div class="timeline-item" [style.animation-delay]="i * 150 + 'ms'">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          @if (i < experiences.length - 1) { <div class="marker-line">
+        </div>
+        }
+      </div>
+
+      <div class="timeline-content">
+        <div class="exp-header">
+          <div class="company-info">
+            <div class="company-logo">
+              <img [src]="exp.logo" [alt]="exp.company" class="company-image">
+            </div>
+            <div class="company-details">
+              <h3 class="role">{{ exp.role }}</h3>
+              <span class="company">{{ exp.company }}</span>
+            </div>
+          </div>
+          <div class="exp-duration">
+            <i class="pi pi-clock"></i>
+            <span>{{ exp.duration }}</span>
+            @if (exp.current) {
+            <span class="current-badge">Current</span>
+            }
+          </div>
+        </div>
+
+        <p class="exp-description">{{ exp.description[0] }}</p>
+
+        <ul class="exp-tasks">
+          @for (task of exp.description; track task; let j = $index) {
+          @if (j > 0) {
+          <li>{{ task }}</li>
+          }
+          }
+        </ul>
+
+        <div class="exp-tech">
+          @for (tech of exp.technologies; track tech) {
+          <span class="tech-tag">{{ tech }}</span>
+          }
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  </div>
+</section>

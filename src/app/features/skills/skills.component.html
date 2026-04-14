@@ -1,0 +1,37 @@
+<section class="skills-section">
+  <div class="skills-container">
+    <app-section-title 
+      subtitle="My Expertise" 
+      title="Skills & Technologies" 
+      description="A comprehensive overview of the technologies I work with to bring ideas to life.">
+    </app-section-title>
+
+    <div class="category-filter">
+      @for (category of categories; track category.value) {
+        <button 
+          class="filter-btn" 
+          [class.active]="activeCategory === category.value"
+          (click)="setCategory(category.value)">
+          {{ category.label }}
+        </button>
+      }
+    </div>
+
+    <div class="skills-grid">
+      @for (skill of getFilteredSkills(); track skill.name; let i = $index) {
+        <div class="skill-card" [style.animation-delay]="i * 50 + 'ms'">
+          <div class="skill-icon">
+            <i [class]="skill.icon"></i>
+          </div>
+          <div class="skill-info">
+            <h3 class="skill-name">{{ skill.name }}</h3>
+            <div class="skill-progress">
+              <div class="progress-bar" [style.width]="skill.proficiency + '%'"></div>
+            </div>
+            <span class="skill-percentage">{{ skill.proficiency }}%</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

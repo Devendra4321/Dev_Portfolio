@@ -1,0 +1,59 @@
+<section class="home-section">
+  <div class="hero-background">
+    <div class="grid-pattern"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="greeting">Hello, I'm</span>
+      <h1 class="name">{{ profile?.name }}</h1>
+      <h2 class="title">{{ profile?.title }}</h2>
+      <p class="tagline">{{ typedText }}<span class="cursor">|</span></p>
+
+      <div class="hero-cta">
+        <button class="btn-primary" (click)="navigateTo('/projects')">
+          <i class="pi pi-briefcase"></i>
+          View Projects
+        </button>
+        <button class="btn-secondary" (click)="navigateTo('/contact')">
+          <i class="pi pi-envelope"></i>
+          Contact Me
+        </button>
+      </div>
+
+      <div class="social-links">
+        @for (link of getSocialLinks(); track link.name) {
+        <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="social-link"
+          [attr.aria-label]="link.name">
+          <i [class]="link.icon"></i>
+        </a>
+        }
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="image-wrapper">
+        @if (profile?.avatar) {
+        <img [src]="profile?.avatar" [alt]="profile?.name" class="avatar-image">
+        } @else {
+        <div class="avatar-placeholder">
+          <span>{{ profile?.name?.charAt(0) }}</span>
+        </div>
+        }
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <span>Scroll to explore</span>
+  </div>
+</section>

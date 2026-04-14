@@ -1,0 +1,65 @@
+<section class="about-section">
+  <div class="about-container">
+    <app-section-title subtitle="About Me" title="Passionate Developer"
+      description="Learn more about my journey, skills, and what drives me to create exceptional digital experiences.">
+    </app-section-title>
+
+    <div class="about-content">
+      <div class="about-image">
+        <div class="image-card">
+          @if (profile?.image) {
+          <img [src]="profile?.image" [alt]="profile?.name" class="avatar-image">
+          } @else {
+          <div class="avatar-placeholder">
+            <span>{{ profile?.name?.charAt(0) }}</span>
+          </div>
+          }
+          <div class="experience-badge">
+            <span class="badge-number">{{profile?.yearsExperience}}+</span>
+            <span class="badge-text">Years Exp.</span>
+          </div>
+        </div>
+        <div class="decoration-circle"></div>
+      </div>
+
+      <div class="about-info">
+        <h2 class="about-title">Building Digital Excellence</h2>
+        <p class="about-bio">{{ profile?.bio }}</p>
+
+        <div class="about-details">
+          <div class="detail-item">
+            <i class="pi pi-map-marker"></i>
+            <span>{{ profile?.location }}</span>
+          </div>
+          <div class="detail-item">
+            <i class="pi pi-envelope"></i>
+            <span>{{ profile?.email }}</span>
+          </div>
+          <div class="detail-item">
+            <i class="pi pi-phone"></i>
+            <span>{{ profile?.phone }}</span>
+          </div>
+        </div>
+
+        <button class="btn-resume" (click)="downloadResume()">
+          <i class="pi pi-download"></i>
+          Download Resume
+        </button>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      @for (stat of stats; track stat.label) {
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i [class]="stat.icon"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ stat.value }}+</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

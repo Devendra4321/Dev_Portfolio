@@ -1,0 +1,70 @@
+<section class="projects-section">
+  <div class="projects-container">
+    <app-section-title subtitle="My Work" title="Featured Projects"
+      description="A collection of projects that showcase my skills and passion for creating innovative solutions.">
+    </app-section-title>
+
+    <div class="project-filters">
+      @for (tech of technologies; track tech) {
+      <button class="filter-btn" [class.active]="activeFilter === tech" (click)="setFilter(tech)">
+        {{ tech === 'all' ? 'All' : tech }}
+      </button>
+      }
+    </div>
+
+    <div class="projects-grid">
+      @for (project of filteredProjects; track trackByProjectId($index, project); let i = $index) {
+      <div class="project-card" [style.animation-delay]="i * 100 + 'ms'">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <i class="pi pi-image"></i>
+          </div>
+          <div class="project-overlay">
+            <div class="overlay-actions">
+              @if (project.githubUrl) {
+              <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="action-btn"
+                aria-label="View on GitHub">
+                <i class="pi pi-github"></i>
+              </a>
+              }
+              @if (project.demoUrl) {
+              <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer" class="action-btn"
+                aria-label="View live demo">
+                <i class="pi pi-external-link"></i>
+              </a>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-associate">{{ project.associateWith }}</p>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-tech">
+            @for (tech of project.technologies; track tech) {
+            <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+
+          <div class="project-links">
+            @if (project.demoUrl) {
+            <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer" class="project-link">
+              <i class="pi pi-external-link"></i>
+              Live Demo
+            </a>
+            }
+            @if (project.githubUrl) {
+            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="project-link">
+              <i class="pi pi-github"></i>
+              Source Code
+            </a>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

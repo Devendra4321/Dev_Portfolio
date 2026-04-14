@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+:host {
+  display: block;
+}
+
+.experience-section {
+  padding: 6rem 2rem;
+  background: var(--surface-ground);
+  min-height: 100vh;
+}
+
+.experience-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  animation: fadeInUp 0.5s ease-out both;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marker-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 4px solid var(--surface-ground);
+  box-shadow: 0 0 0 2px var(--primary-color);
+  z-index: 1;
+}
+
+.marker-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, var(--primary-color), var(--surface-border));
+  margin-top: 0.5rem;
+}
+
+.timeline-content {
+  flex: 1;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(8px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+    border-color: var(--primary-color);
+  }
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.company-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+}
+
+.company-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.role {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.company {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--text-color-secondary);
+}
+
+.exp-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-color-secondary);
+  background: var(--surface-ground);
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+
+  i {
+    color: var(--primary-color);
+  }
+}
+
+.current-badge {
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.exp-description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.exp-tasks {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--text-color-secondary);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+
+  li {
+    margin-bottom: 0.5rem;
+
+    &::marker {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-color);
+  border-radius: 15px;
+}

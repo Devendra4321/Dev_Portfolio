@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">DB</span>
+          <span class="logo-text">DevPortfolio</span>
+        </div>
+        <p class="footer-tagline">{{ profile?.footerTagline || 'Building elegant solutions with modern technologies' }}
+        </p>
+        <div class="footer-contact">
+          <a [href]="'mailto:' + profile?.email" class="contact-link">
+            <i class="pi pi-envelope"></i>
+            {{ profile?.email }}
+          </a>
+          <span class="contact-link">
+            <i class="pi pi-map-marker"></i>
+            {{ profile?.location }}
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a (click)="navigateTo('/home')">Home</a></li>
+          <li><a (click)="navigateTo('/about')">About</a></li>
+          <li><a (click)="navigateTo('/projects')">Projects</a></li>
+          <li><a (click)="navigateTo('/contact')">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-links">
+          @for (link of getSocialLinks(); track link.name) {
+          <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="social-link"
+            [attr.aria-label]="link.name">
+            <i [class]="link.icon"></i>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} {{ profile?.name || 'Devendra Bhole' }}. All rights reserved.</p>
+      <!-- <p class="footer-credit">Built with <i class="pi pi-heart-fill"></i> using Angular</p> -->
+    </div>
+  </div>
+</footer>

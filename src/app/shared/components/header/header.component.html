@@ -1,0 +1,37 @@
+<header [class.scrolled]="isScrolled" [class.dark]="isDarkMode">
+  <div class="header-container">
+    <div class="logo" (click)="navigateTo('/home')">
+      <span class="logo-icon">DB</span>
+      <span class="logo-text">Portfolio</span>
+    </div>
+
+    <nav class="desktop-nav">
+      @for (item of navItems; track item.route) {
+      <a [class.active]="isActive(item.route)" (click)="navigateTo(item.route)" class="nav-link">
+        <i [class]="item.icon"></i>
+        {{ item.label }}
+      </a>
+      }
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" (click)="toggleTheme()"
+        [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+        <i [class]="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'"></i>
+      </button>
+
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <i [class]="isMobileMenuOpen ? 'pi pi-times' : 'pi pi-bars'"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" [class.open]="isMobileMenuOpen">
+    @for (item of navItems; track item.route) {
+    <a [class.active]="isActive(item.route)" (click)="navigateTo(item.route)" class="mobile-nav-link">
+      <i [class]="item.icon"></i>
+      {{ item.label }}
+    </a>
+    }
+  </div>
+</header>
