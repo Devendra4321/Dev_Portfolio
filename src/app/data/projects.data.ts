@@ -27,10 +27,10 @@ export const PROJECTS_DATA: Project[] = [
     id: 5,
     title: 'Rider Webapp',
     description: 'Rider Webapp is a platform that connects riders with drivers for convenient and efficient transportation services. The application aims to provide a seamless experience for users to book rides, track their journeys, and make payments securely. It includes real-time ride tracking, fare estimation, wallets, and multiple payment options. The platform offers a user-friendly interface, secure authentication, and efficient communication between riders and drivers. Additionally, it supports various payment methods, digital wallets, and coupons, ensuring a smooth and hassle-free transaction process.',
-    image: '',
+    image: 'assets/images/riderApp.png',
     technologies: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bootstrap', 'Razorpay', 'WebSockets', 'Nodemailer'],
     githubUrl: 'https://github.com/Devendra4321/Rider_Webapp',
-    demoUrl: '',
+    demoUrl: 'https://rider-webapp-ia1oxpado-devendra-bholes-projects.vercel.app/home',
     featured: false,
     associateWith: 'Self-Project'
   },

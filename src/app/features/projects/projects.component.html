@@ -17,7 +17,11 @@
       <div class="project-card" [style.animation-delay]="i * 100 + 'ms'">
         <div class="project-image">
           <div class="image-placeholder">
+            @if(project.image){
+            <img [src]="project.image" alt="{{ project.title }}" class="project-img">
+            }@else{
             <i class="pi pi-image"></i>
+            }
           </div>
           <div class="project-overlay">
             <div class="overlay-actions">
