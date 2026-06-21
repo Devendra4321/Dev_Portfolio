@@ -5,7 +5,7 @@ export const PROFILE_DATA: Profile = {
   title: 'MEAN Developer',
   tagline: 'Building scalable, enterprise-grade frontend architectures with Angular',
   footerTagline: 'MEAN Developer',
-  bio: `Dynamic and results-driven Angular Developer with 1.5+ years of experience in building scalable, enterprise-grade frontend architectures. Expertise in Angular (v19), JSON-driven UIs, and AI-powered smart modules.
+  bio: `Dynamic and results-driven Angular Developer with 2+ years of experience in building scalable, enterprise-grade frontend architectures. Expertise in Angular (v19), JSON-driven UIs, and AI-powered smart modules.
 
 Proven success in designing high-performance, reusable components, integrating AWS S3 securely, and enhancing digital experiences. Passionate about performance optimization and clean code in agile, team-oriented environments.`,
   avatar: 'assets/images/avatar.png',
@@ -13,7 +13,7 @@ Proven success in designing high-performance, reusable components, integrating A
   location: 'Pune',
   email: 'devendrabhole3369@gmail.com',
   phone: '+91 9764715488',
-  yearsExperience: 1.5,
+  yearsExperience: 2,
   projectsCompleted: 6,
   happyClients: 3,
   resumeUrl: 'assets/resume/Resume.pdf',
